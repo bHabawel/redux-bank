@@ -34,20 +34,20 @@ export default function accountReducer(state = initialStateAccount, action) {
 }
 
 export function deposit(amount) {
-  return { type: "account/deposit", payload: 500 };
+  return { type: "account/deposit", payload: amount };
 }
 
 export function withdraw(amount) {
-  return { type: "account/withdraw", payload: 250 };
+  return { type: "account/withdraw", payload: amount };
 }
 
-export function requestLoan(amount) {
+export function requestLoan(amount, purpose) {
   return {
     type: "account/requestLoan",
-    payload: { loan: 1000, loanPurpose: "Buy a car" },
+    payload: { loan: amount, loanPurpose: purpose },
   };
 }
 
-export function payLoan(amount) {
+export function payLoan() {
   return { type: "account/payLoan" };
 }
